@@ -1,0 +1,112 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="label">Farlink Systems LLC</span>
+        <p class="footer-text">
+          Industrial automation, electrical testing, and engineering services for commercial, industrial, and federal clients.
+        </p>
+        <p class="footer-address" style="margin-top: 0.75rem;">
+          885 Gold Hill Rd<br/>Fort Mill, SC 29708
+        </p>
+      </div>
+      <div class="footer-nav">
+        <span class="label">Navigation</span>
+        <nav class="footer-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <span class="label">Contact</span>
+        <div class="footer-links">
+          <a href="mailto:david@farlinksystems.com">david@farlinksystems.com</a>
+          <a href="#" class="phone-link" data-p1="843" data-p2="901" data-p3="7138"></a>
+          <span class="footer-address">885 Gold Hill Rd<br/>Fort Mill, SC 29708</span>
+        </div>
+      </div>
+    </div>
+    <hr class="rule" />
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; {year} Farlink Systems LLC. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-text {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+    margin-top: 0.75rem;
+    max-width: 35ch;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .footer-links a {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-address {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+    line-height: 1.5;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+  }
+
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--gray-600);
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.phone-link').forEach(el => {
+    const p1 = el.dataset.p1;
+    const p2 = el.dataset.p2;
+    const p3 = el.dataset.p3;
+    const num = p1 + '-' + p2 + '-' + p3;
+    el.textContent = num;
+    el.href = 'tel:+1' + p1 + p2 + p3;
+  });
+</script>

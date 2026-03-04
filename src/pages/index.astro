@@ -1,0 +1,285 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="container hero-content">
+      <span class="label">Industrial Engineering &amp; Automation</span>
+      <h1>We keep<br/>industry<br/>running.</h1>
+      <p class="hero-sub">
+        Farlink Systems provides industrial automation, electrical testing, arc flash analysis, and engineering services for commercial, industrial, and federal facilities.
+      </p>
+      <div class="hero-actions">
+        <a href="/services" class="btn btn--filled">Our Services</a>
+        <a href="/contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-stripe"></div>
+  </section>
+
+  <!-- CAPABILITIES STRIP -->
+  <section class="cap-strip">
+    <div class="container">
+      <div class="cap-items">
+        <div class="cap-item">
+          <span class="cap-num">01</span>
+          <span class="cap-label">Industrial Automation</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">02</span>
+          <span class="cap-label">Electrical Testing</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">03</span>
+          <span class="cap-label">Arc Flash Studies</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">04</span>
+          <span class="cap-label">Water Systems Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left">
+          <span class="label">Who We Are</span>
+          <h2>Engineering that starts with the problem, not the brochure.</h2>
+        </div>
+        <div class="intro-right">
+          <p>
+            Farlink Systems is a hands-on engineering firm built around solving real problems in industrial environments. We design automation systems, perform electrical testing and commissioning, conduct arc flash hazard analyses, and deliver engineering services for private industry and federal agencies alike.
+          </p>
+          <p style="margin-top: 1rem;">
+            We don't sell boxes. We understand processes, design systems around production requirements, and make sure they work when they need to.
+          </p>
+          <a href="/about" class="btn" style="margin-top: 2rem;">About Farlink</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section services-preview">
+    <div class="container">
+      <span class="label">What We Do</span>
+      <h2 style="margin-top: 0.5rem; margin-bottom: 3rem;">Core Services</h2>
+      <div class="grid-3">
+        <div class="service-card">
+          <span class="service-icon">⚡</span>
+          <h3>Industrial Automation</h3>
+          <p>PLC programming, HMI development, system integration, and controls design for manufacturing and process facilities.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🔬</span>
+          <h3>Testing &amp; Commissioning</h3>
+          <p>Acceptance testing, protective relay testing, power quality analysis, and electrical system commissioning.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">⚠</span>
+          <h3>Arc Flash Studies</h3>
+          <p>IEEE 1584-compliant arc flash hazard analyses, short circuit studies, coordination studies, and labeling programs.</p>
+        </div>
+      </div>
+      <div style="margin-top: 3rem;">
+        <a href="/services" class="btn">All Services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEDERAL WORK CALLOUT -->
+  <section class="section federal-section">
+    <div class="container">
+      <div class="federal-inner">
+        <span class="label">Federal &amp; Government</span>
+        <h2>Cleared for the work<br/>that matters.</h2>
+        <p>
+          Farlink Systems supports federal agencies with engineering services including automation, electrical design, testing, and studies for government facilities. We understand the compliance, documentation, and security requirements that federal work demands.
+        </p>
+        <a href="/contact" class="btn btn--filled" style="margin-top: 2rem;">Discuss Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container" style="text-align: center;">
+      <span class="label">Ready to Start?</span>
+      <h2 style="margin: 0.5rem auto 1.5rem;">Let's talk about your project.</h2>
+      <a href="/contact" class="btn btn--filled">Contact Us</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* === HERO === */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-top: 4rem;
+    overflow: hidden;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(232, 100, 27, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 100, 27, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 70% at 30% 50%, black 0%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin: 1rem 0 1.5rem;
+    color: var(--white);
+  }
+
+  .hero-sub {
+    font-size: var(--text-lg);
+    max-width: 50ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), transparent 60%);
+  }
+
+  /* === CAP STRIP === */
+  .cap-strip {
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
+  }
+
+  .cap-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cap-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .cap-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+  }
+
+  .cap-label {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-200);
+  }
+
+  @media (min-width: 768px) {
+    .cap-items { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* === INTRO === */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .intro-left h2 {
+    margin-top: 0.75rem;
+    color: var(--white);
+  }
+
+  @media (min-width: 768px) {
+    .intro-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  }
+
+  /* === SERVICE CARDS === */
+  .services-preview {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    background: var(--dark-mid);
+    transition: border-color 0.2s;
+  }
+
+  .service-card:hover {
+    border-color: var(--accent);
+  }
+
+  .service-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--white);
+  }
+
+  .service-card p {
+    font-size: var(--text-sm);
+  }
+
+  /* === FEDERAL === */
+  .federal-section {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .federal-inner {
+    max-width: 700px;
+  }
+
+  .federal-inner h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+  }
+
+  /* === CTA === */
+  .cta-section {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+  }
+</style>

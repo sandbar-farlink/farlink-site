@@ -1,0 +1,194 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Services" description="Farlink Systems services — industrial automation, testing, arc flash studies, and federal engineering.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="label">Services</span>
+      <h1>What we do.</h1>
+      <hr class="rule--accent" />
+    </div>
+  </section>
+
+  <!-- SERVICES LIST -->
+  <section class="section">
+    <div class="container">
+
+      <div class="service-block">
+        <div class="service-header">
+          <span class="service-num">01</span>
+          <h2>Industrial Automation</h2>
+        </div>
+        <div class="service-body">
+          <p>
+            We design and program control systems for manufacturing and process facilities. PLC programming across Allen Bradley and CODESYS platforms, HMI/SCADA development, system integration, and panel design. From single-machine controls to plant-wide automation, we build systems that production teams can actually operate and maintain.
+          </p>
+          <ul class="service-details">
+            <li>PLC programming (Allen Bradley, CODESYS)</li>
+            <li>HMI / SCADA development (FactoryTalk View, various platforms)</li>
+            <li>Controls design and panel layout</li>
+            <li>System integration and commissioning</li>
+            <li>IO-Link and industrial networking</li>
+            <li>Remote monitoring and control</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <div class="service-block">
+        <div class="service-header">
+          <span class="service-num">02</span>
+          <h2>Electrical Testing &amp; Commissioning</h2>
+        </div>
+        <div class="service-body">
+          <p>
+            Acceptance testing, protective device testing, power quality analysis, and full commissioning services. We verify that electrical systems perform as designed before they go online, and troubleshoot the ones that aren't performing after.
+          </p>
+          <ul class="service-details">
+            <li>Acceptance and proof testing</li>
+            <li>Protective relay testing and calibration</li>
+            <li>Power quality analysis</li>
+            <li>Infrared thermographic surveys</li>
+            <li>Insulation resistance and hi-pot testing</li>
+            <li>System commissioning</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <div class="service-block">
+        <div class="service-header">
+          <span class="service-num">03</span>
+          <h2>Arc Flash Hazard Analysis</h2>
+        </div>
+        <div class="service-body">
+          <p>
+            IEEE 1584-compliant arc flash studies, short circuit analysis, protective device coordination, and equipment labeling programs. We help facilities understand and mitigate their arc flash hazards with clear, actionable results — not just a stack of paper.
+          </p>
+          <ul class="service-details">
+            <li>Arc flash hazard analysis (IEEE 1584)</li>
+            <li>Short circuit studies</li>
+            <li>Protective device coordination</li>
+            <li>Equipment labeling programs</li>
+            <li>PPE recommendations</li>
+            <li>Remediation consulting</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="rule" />
+
+      <div class="service-block">
+        <div class="service-header">
+          <span class="service-num">04</span>
+          <h2>Federal &amp; Government Services</h2>
+        </div>
+        <div class="service-body">
+          <p>
+            Farlink Systems supports federal agencies with a range of engineering services. We understand the documentation, compliance, and quality requirements of government work, and we deliver engineering that meets federal standards without the overhead of a large firm.
+          </p>
+          <ul class="service-details">
+            <li>Electrical design for federal facilities</li>
+            <li>Automation and controls for government installations</li>
+            <li>Testing and commissioning</li>
+            <li>Arc flash and power system studies</li>
+            <li>Energy auditing and analysis</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container" style="text-align: center;">
+      <span class="label">Have a project?</span>
+      <h2 style="margin: 0.5rem auto 1.5rem;">Tell us what you need.</h2>
+      <a href="/contact" class="btn btn--filled">Get in Touch</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero h1 {
+    margin: 0.75rem 0 1.5rem;
+    color: var(--white);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+
+  .service-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 3rem 0;
+  }
+
+  .service-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .service-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent);
+  }
+
+  .service-header h2 {
+    color: var(--white);
+  }
+
+  .service-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .service-details {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .service-details li {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-400);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cta-section {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+  }
+
+  @media (min-width: 768px) {
+    .service-block {
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+    }
+
+    .service-details {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,159 @@
+---
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="Farlink Systems" class="logo-img" />
+    </a>
+    <nav class="nav">
+      <a href="/" class:list={["nav-link", { active: pathname === "/" }]}>Home</a>
+      <a href="/about" class:list={["nav-link", { active: pathname === "/about/" || pathname === "/about" }]}>About</a>
+      <a href="/services" class:list={["nav-link", { active: pathname === "/services/" || pathname === "/services" }]}>Services</a>
+      <a href="/contact" class:list={["nav-link", { active: pathname === "/contact/" || pathname === "/contact" }]}>Contact</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle menu" id="menuToggle">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services">Services</a>
+    <a href="/contact">Contact</a>
+  </nav>
+</div>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 2.5rem;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .nav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gray-400);
+    transition: color 0.2s;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--white);
+    border-bottom-color: var(--accent);
+  }
+
+  .mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.2s;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: var(--black);
+    padding-top: 5rem;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .mobile-nav-links a {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-400);
+    transition: color 0.2s;
+  }
+
+  .mobile-nav-links a:hover {
+    color: var(--accent);
+  }
+
+  @media (min-width: 768px) {
+    .nav { display: flex; }
+    .mobile-toggle { display: none; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  toggle?.addEventListener('click', () => {
+    mobileNav?.classList.toggle('open');
+  });
+
+  // Close on link click
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.remove('open');
+    });
+  });
+</script>

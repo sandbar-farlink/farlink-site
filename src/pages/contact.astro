@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Contact" description="Contact Farlink Systems for industrial automation, testing, and engineering services.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="label">Contact</span>
+      <h1>Get in touch.</h1>
+      <hr class="rule--accent" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            Whether you need automation design, electrical testing, an arc flash study, or engineering support for a federal project — reach out. We'll talk through your requirements and figure out the right approach.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="label">Email</span>
+              <a href="mailto:david@farlinksystems.com" class="contact-value">david@farlinksystems.com</a>
+            </div>
+
+            <div class="contact-item">
+              <span class="label">Phone</span>
+              <a href="#" class="contact-value phone-link" data-p1="843" data-p2="901" data-p3="7138"></a>
+            </div>
+
+            <div class="contact-item">
+              <span class="label">Address</span>
+              <span class="contact-value">885 Gold Hill Rd<br/>Fort Mill, SC 29708</span>
+            </div>
+
+            <div class="contact-item">
+              <span class="label">Sectors</span>
+              <span class="contact-value">Industrial / Commercial / Federal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden" style="display:none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+              <label class="label" for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" />
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="message">Tell us about your project</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--filled">Send Message</button>
+          </form>
+          <p class="form-note">
+            Note: Form processing requires a backend service. See deployment docs for Cloudflare Pages form handling options.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero h1 {
+    margin: 0.75rem 0 1.5rem;
+    color: var(--white);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info p {
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .contact-value {
+    font-size: var(--text-lg);
+    color: var(--white);
+  }
+
+  a.contact-value:hover {
+    color: var(--accent);
+  }
+
+  /* === Form === */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    padding: 0.75rem 1rem;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-note {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--gray-600);
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.phone-link').forEach(el => {
+    const p1 = el.dataset.p1;
+    const p2 = el.dataset.p2;
+    const p3 = el.dataset.p3;
+    const num = p1 + '-' + p2 + '-' + p3;
+    el.textContent = num;
+    el.href = 'tel:+1' + p1 + p2 + p3;
+  });
+</script>
