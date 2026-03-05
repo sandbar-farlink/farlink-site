@@ -67,3 +67,4 @@ The contact form is currently a static HTML form. For Cloudflare Pages, options 
 - Fonts loaded from Google Fonts (Barlow Condensed, DM Sans, JetBrains Mono)
 - No JavaScript frameworks — pure Astro components with minimal client-side JS (mobile menu only)
 - All pages are static — no server-side rendering needed
+# farlink-site
