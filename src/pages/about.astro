@@ -2,139 +2,115 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="About" description="About Farlink Systems — industrial engineering and automation firm.">
-
-  <section class="page-hero">
+<Base title="About" description="Farlink Systems is built around field-tested electrical and automation work for industrial, commercial, water, and government facilities.">
+  <section class="page-intro">
     <div class="container">
-      <span class="label">About</span>
-      <h1>Built on<br/>field experience.</h1>
-      <hr class="rule--accent" />
+      <span class="eyebrow">About</span>
+      <h1>Field experience first.</h1>
+      <p>
+        Farlink Systems came out of hands-on electrical and automation work. The company exists to solve real problems at real
+        sites, not to dress up ordinary work with fancy language.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="stack">
+        <p>
+          We have worked on controls, power, testing, commissioning, and troubleshooting in industrial plants, water and
+          wastewater facilities, commercial sites, and government projects.
+        </p>
+        <p>
+          That background changes how we approach the work. We care about whether the drawings are usable, whether the scope is
+          actually clear, and whether the system will start up without turning into a finger-pointing exercise.
+        </p>
+        <p>
+          Good engineering should make the job easier for operations, maintenance, and the owner. That is the bar.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <article class="card info-card">
+          <span class="eyebrow">Platforms</span>
+          <ul class="list-reset checklist compact-list">
+            <li>Allen Bradley / Rockwell</li>
+            <li>CODESYS</li>
+            <li>FactoryTalk View</li>
+            <li>Other HMI and controls platforms as needed</li>
+          </ul>
+        </article>
+
+        <article class="card info-card">
+          <span class="eyebrow">Typical sectors</span>
+          <ul class="list-reset checklist compact-list">
+            <li>Industrial and manufacturing</li>
+            <li>Water and wastewater</li>
+            <li>Commercial facilities</li>
+            <li>Government and public infrastructure</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What that means in practice</span>
+        <h2>We try to make the work easier for the people who have to live with it.</h2>
+      </div>
+
+      <div class="info-grid info-grid--3">
+        <article class="card info-card">
+          <span class="eyebrow">Process first</span>
+          <p>We start with the production goal, site limitations, and outage windows before we talk about solutions.</p>
+        </article>
+
+        <article class="card info-card">
+          <span class="eyebrow">Usable documents</span>
+          <p>Drawings, scopes, and study outputs should help the next person do their job instead of slowing them down.</p>
+        </article>
+
+        <article class="card info-card">
+          <span class="eyebrow">Direct communication</span>
+          <p>Clients should know what is happening, what decisions matter, and what still needs to be resolved.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="about-grid">
-        <div>
-          <p>
-            Farlink Systems grew out of decades of hands-on electrical engineering and industrial automation work. We've programmed PLCs, designed power distribution systems, commissioned equipment, and solved problems in manufacturing plants, water treatment facilities, and federal installations.
-          </p>
-          <p style="margin-top: 1.5rem;">
-            We started this firm because too much engineering gets done from behind a desk by people who've never had to make a system work on a Monday morning with production breathing down their neck. Our approach is different — we start with what you're actually trying to accomplish and work backward from there.
-          </p>
-          <p style="margin-top: 1.5rem;">
-            That means we understand the full stack: from the electrical backbone and power distribution, through the controls and automation layer, to the operational requirements that drive everything. We don't just draw it up — we make it run.
-          </p>
-        </div>
-        <div class="about-sidebar">
-          <div class="about-stat-block">
-            <span class="label">Platforms</span>
-            <ul class="about-list">
-              <li>Allen Bradley / Rockwell</li>
-              <li>CODESYS</li>
-              <li>FactoryTalk View</li>
-              <li>Various HMI platforms</li>
-            </ul>
-          </div>
-          <div class="about-stat-block">
-            <span class="label">Sectors</span>
-            <ul class="about-list">
-              <li>Manufacturing</li>
-              <li>Water / Wastewater</li>
-              <li>Federal / Government</li>
-              <li>Commercial / Industrial</li>
-            </ul>
-          </div>
+      <div class="surface callout">
+        <span class="eyebrow">Need a hand?</span>
+        <p>
+          Some clients bring us in early to shape a project. Others call when something already exists and is not working well.
+          Both are fine.
+        </p>
+        <div class="button-row">
+          <a href="/services" class="btn">See services</a>
+          <a href="/contact" class="btn btn--ghost">Start a conversation</a>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section philosophy-section">
-    <div class="container">
-      <span class="label">Our Philosophy</span>
-      <h2 style="margin-top: 0.5rem; margin-bottom: 1.5rem;">
-        Build the plant around the process, not the other way around.
-      </h2>
-      <p style="max-width: 70ch;">
-        For too long, industrial facilities have been designed backwards — build the building, run the utilities, bolt the equipment down, and then figure out how to make it all work. We believe the design process should start from the end product and the production needs, with the facility and its energy infrastructure built around those requirements. When the electrical design, controls, and building systems are all engineered together from the start, the result is a facility that costs less to run and actually does what it was built to do.
-      </p>
-    </div>
-  </section>
-
-  <section class="section cta-section">
-    <div class="container" style="text-align: center;">
-      <h2>Let's work together.</h2>
-      <p style="margin: 1rem auto;">We're always interested in challenging projects.</p>
-      <a href="/contact" class="btn btn--filled" style="margin-top: 1rem;">Contact Us</a>
-    </div>
-  </section>
-
 </Base>
 
 <style>
-  .page-hero {
-    padding-top: 7rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .page-hero h1 {
-    margin: 0.75rem 0 1.5rem;
-    color: var(--white);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-  }
-
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .about-sidebar {
-    display: flex;
-    flex-direction: column;
     gap: 2rem;
+    align-items: start;
   }
 
-  .about-stat-block {
-    padding: 1.5rem;
-    border: 1px solid var(--border);
-    background: var(--dark);
+  .compact-list {
+    margin-top: 0.85rem;
   }
 
-  .about-list {
-    list-style: none;
-    margin-top: 0.75rem;
-  }
-
-  .about-list li {
-    font-size: var(--text-sm);
-    color: var(--gray-200);
-    padding: 0.35rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .about-list li:last-child {
-    border-bottom: none;
-  }
-
-  .philosophy-section {
-    background: var(--dark);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .philosophy-section h2 {
-    color: var(--white);
-    max-width: 50ch;
-  }
-
-  .cta-section h2 {
-    color: var(--white);
-  }
-
-  @media (min-width: 768px) {
-    .about-grid { grid-template-columns: 3fr 2fr; gap: 4rem; }
+  @media (min-width: 860px) {
+    .about-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    }
   }
 </style>

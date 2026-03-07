@@ -1,159 +1,242 @@
 ---
 const pathname = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'Home', active: pathname === '/' },
+  { href: '/about', label: 'About', active: pathname === '/about' || pathname === '/about/' },
+  { href: '/services', label: 'Services', active: pathname === '/services' || pathname === '/services/' },
+  { href: '/contact', label: 'Contact', active: pathname === '/contact' || pathname === '/contact/' }
+];
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="/" class="logo">
-      <img src="/logo.png" alt="Farlink Systems" class="logo-img" />
+    <a href="/" class="brand" aria-label="Farlink Systems home">
+      <img src="/logo-mark.png" alt="" class="brand-mark" />
+      <span class="brand-text">
+        <strong>Farlink</strong>
+        <span>Systems LLC</span>
+      </span>
     </a>
-    <nav class="nav">
-      <a href="/" class:list={["nav-link", { active: pathname === "/" }]}>Home</a>
-      <a href="/about" class:list={["nav-link", { active: pathname === "/about/" || pathname === "/about" }]}>About</a>
-      <a href="/services" class:list={["nav-link", { active: pathname === "/services/" || pathname === "/services" }]}>Services</a>
-      <a href="/contact" class:list={["nav-link", { active: pathname === "/contact/" || pathname === "/contact" }]}>Contact</a>
+
+    <nav class="nav" aria-label="Primary">
+      {navItems.map((item) => (
+        <a href={item.href} class:list={["nav-link", { active: item.active }]} aria-current={item.active ? "page" : undefined}>
+          {item.label}
+        </a>
+      ))}
     </nav>
-    <button class="mobile-toggle" aria-label="Toggle menu" id="menuToggle">
+
+    <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav" id="menuToggle">
       <span></span>
       <span></span>
     </button>
   </div>
 </header>
 
-<!-- Mobile nav overlay -->
 <div class="mobile-nav" id="mobileNav">
-  <nav class="mobile-nav-links">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/services">Services</a>
-    <a href="/contact">Contact</a>
+  <nav class="mobile-panel surface" aria-label="Mobile">
+    {navItems.map((item) => (
+      <a href={item.href} class:list={["mobile-link", { active: item.active }]}>
+        {item.label}
+      </a>
+    ))}
   </nav>
 </div>
 
 <style>
   .site-header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0 0 auto;
     z-index: 100;
-    background: rgba(10, 10, 10, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(244, 241, 235, 0.82);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 4rem;
+    min-height: 4.75rem;
+    gap: 1rem;
   }
 
-  .logo {
-    display: flex;
+  .brand {
+    display: inline-flex;
     align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
   }
 
-  .logo-img {
-    height: 2.5rem;
-    width: auto;
-    filter: brightness(0) invert(1);
+  .brand-mark {
+    width: 2.65rem;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 0.2rem;
+    color: var(--brand);
+  }
+
+  .brand-text strong {
+    font-size: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  .brand-text span {
+    font-size: 0.8rem;
+    color: var(--text-faint);
   }
 
   .nav {
     display: none;
     align-items: center;
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .nav-link {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--gray-400);
-    transition: color 0.2s;
-    padding: 0.25rem 0;
-    border-bottom: 1px solid transparent;
+    position: relative;
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    transition: color 0.18s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--brand);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.18s ease;
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: var(--white);
-    border-bottom-color: var(--accent);
+    color: var(--brand);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    transform: scaleX(1);
   }
 
   .mobile-toggle {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
+    justify-content: center;
+    gap: 0.35rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--brand);
   }
 
   .mobile-toggle span {
-    display: block;
-    width: 24px;
+    width: 1rem;
     height: 2px;
-    background: var(--white);
-    transition: all 0.2s;
+    margin: 0 auto;
+    background: currentColor;
+    border-radius: 999px;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+  }
+
+  .mobile-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(3px) rotate(45deg);
+  }
+
+  .mobile-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
   }
 
   .mobile-nav {
-    display: none;
     position: fixed;
-    inset: 0;
-    z-index: 99;
-    background: var(--black);
-    padding-top: 5rem;
+    inset: 4.75rem 1rem auto;
+    z-index: 90;
+    display: none;
   }
 
   .mobile-nav.open {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
 
-  .mobile-nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+  .mobile-panel {
+    padding: 1rem;
   }
 
-  .mobile-nav-links a {
-    font-family: var(--font-display);
-    font-size: var(--text-3xl);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--gray-400);
-    transition: color 0.2s;
+  .mobile-link {
+    display: block;
+    padding: 0.9rem 0.35rem;
+    color: var(--text-soft);
+    border-bottom: 1px solid var(--line);
   }
 
-  .mobile-nav-links a:hover {
-    color: var(--accent);
+  .mobile-link:last-child {
+    border-bottom: 0;
   }
 
-  @media (min-width: 768px) {
-    .nav { display: flex; }
-    .mobile-toggle { display: none; }
+  .mobile-link.active {
+    color: var(--brand);
+    font-weight: 600;
+  }
+
+  @media (min-width: 760px) {
+    .nav {
+      display: flex;
+    }
+
+    .mobile-toggle,
+    .mobile-nav {
+      display: none;
+    }
+
+    .brand-text strong {
+      font-size: 1.05rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .brand-text span {
+      display: none;
+    }
   }
 </style>
 
 <script>
   const toggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
+  const body = document.body;
+
+  const closeMenu = () => {
+    mobileNav?.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    body.classList.remove('nav-open');
+  };
 
   toggle?.addEventListener('click', () => {
-    mobileNav?.classList.toggle('open');
+    const open = mobileNav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    body.classList.toggle('nav-open', Boolean(open));
   });
 
-  // Close on link click
-  mobileNav?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav?.classList.remove('open');
-    });
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 760) {
+      closeMenu();
+    }
   });
 </script>

@@ -2,284 +2,236 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Home">
-
-  <!-- HERO -->
+<Base
+  title="Home"
+  description="Farlink Systems handles industrial automation, electrical testing, arc flash studies, and field support for industrial, commercial, water, and government facilities."
+>
   <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="container hero-content">
-      <span class="label">Industrial Engineering &amp; Automation</span>
-      <h1>We keep<br/>industry<br/>running.</h1>
-      <p class="hero-sub">
-        Farlink Systems provides industrial automation, electrical testing, arc flash analysis, and engineering services for commercial, industrial, and federal facilities.
-      </p>
-      <div class="hero-actions">
-        <a href="/services" class="btn btn--filled">Our Services</a>
-        <a href="/contact" class="btn">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-stripe"></div>
-  </section>
-
-  <!-- CAPABILITIES STRIP -->
-  <section class="cap-strip">
-    <div class="container">
-      <div class="cap-items">
-        <div class="cap-item">
-          <span class="cap-num">01</span>
-          <span class="cap-label">Industrial Automation</span>
-        </div>
-        <div class="cap-item">
-          <span class="cap-num">02</span>
-          <span class="cap-label">Electrical Testing</span>
-        </div>
-        <div class="cap-item">
-          <span class="cap-num">03</span>
-          <span class="cap-label">Arc Flash Studies</span>
-        </div>
-        <div class="cap-item">
-          <span class="cap-num">04</span>
-          <span class="cap-label">Water Systems Automation</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTRO SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-left">
-          <span class="label">Who We Are</span>
-          <h2>Engineering that starts with the problem, not the brochure.</h2>
-        </div>
-        <div class="intro-right">
-          <p>
-            Farlink Systems is a hands-on engineering firm built around solving real problems in industrial environments. We design automation systems, perform electrical testing and commissioning, conduct arc flash hazard analyses, and deliver engineering services for private industry and federal agencies alike.
-          </p>
-          <p style="margin-top: 1rem;">
-            We don't sell boxes. We understand processes, design systems around production requirements, and make sure they work when they need to.
-          </p>
-          <a href="/about" class="btn" style="margin-top: 2rem;">About Farlink</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES PREVIEW -->
-  <section class="section services-preview">
-    <div class="container">
-      <span class="label">What We Do</span>
-      <h2 style="margin-top: 0.5rem; margin-bottom: 3rem;">Core Services</h2>
-      <div class="grid-3">
-        <div class="service-card">
-          <span class="service-icon">⚡</span>
-          <h3>Industrial Automation</h3>
-          <p>PLC programming, HMI development, system integration, and controls design for manufacturing and process facilities.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🔬</span>
-          <h3>Testing &amp; Commissioning</h3>
-          <p>Acceptance testing, protective relay testing, power quality analysis, and electrical system commissioning.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">⚠</span>
-          <h3>Arc Flash Studies</h3>
-          <p>IEEE 1584-compliant arc flash hazard analyses, short circuit studies, coordination studies, and labeling programs.</p>
-        </div>
-      </div>
-      <div style="margin-top: 3rem;">
-        <a href="/services" class="btn">All Services →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEDERAL WORK CALLOUT -->
-  <section class="section federal-section">
-    <div class="container">
-      <div class="federal-inner">
-        <span class="label">Federal &amp; Government</span>
-        <h2>Cleared for the work<br/>that matters.</h2>
-        <p>
-          Farlink Systems supports federal agencies with engineering services including automation, electrical design, testing, and studies for government facilities. We understand the compliance, documentation, and security requirements that federal work demands.
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Industrial automation and electrical work</span>
+        <h1>Controls, testing, and studies for sites that have to stay running.</h1>
+        <p class="hero-lead">
+          Farlink Systems handles PLC and HMI work, electrical testing, arc flash studies, and field support. We build around
+          the process, the equipment, and the people who have to operate it.
         </p>
-        <a href="/contact" class="btn btn--filled" style="margin-top: 2rem;">Discuss Your Project</a>
+
+        <ul class="pill-list hero-pills">
+          <li>PLC and HMI work</li>
+          <li>Electrical testing</li>
+          <li>Arc flash studies</li>
+          <li>Water and government sites</li>
+        </ul>
+
+        <div class="button-row">
+          <a href="/services" class="btn">See services</a>
+          <a href="/contact" class="btn btn--ghost">Talk about a project</a>
+        </div>
+      </div>
+
+      <aside class="surface hero-panel">
+        <span class="eyebrow">What we handle</span>
+        <ul class="list-reset checklist">
+          <li>Controls design, PLC programming, HMI screens, and startup support.</li>
+          <li>Acceptance testing, commissioning, troubleshooting, and power quality work.</li>
+          <li>Arc flash, short circuit, and coordination studies with clear deliverables.</li>
+          <li>Industrial, commercial, water, and government work.</li>
+        </ul>
+
+        <div class="hero-panel-note">
+          <span class="kicker">Based in Fort Mill, South Carolina</span>
+          <p>We keep the site simple for the same reason we keep project scope clear: less noise, better work.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container intro-grid">
+      <div>
+        <span class="eyebrow">How we work</span>
+        <h2>Clear scope. Straight answers. Work that holds up in the field.</h2>
+      </div>
+
+      <div class="stack">
+        <p>
+          We start with the process, the existing conditions, and the operating constraints. Then we build the controls,
+          testing plan, or study around that.
+        </p>
+        <p>
+          No padded language. No vague deliverables. Just solid engineering, clean documentation, and follow-through when the
+          system has to start up and run.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section cta-section">
-    <div class="container" style="text-align: center;">
-      <span class="label">Ready to Start?</span>
-      <h2 style="margin: 0.5rem auto 1.5rem;">Let's talk about your project.</h2>
-      <a href="/contact" class="btn btn--filled">Contact Us</a>
+  <section class="section section--muted">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Core services</span>
+        <h2>Most projects land in one of these four buckets.</h2>
+      </div>
+
+      <div class="info-grid info-grid--2 services-grid">
+        <article class="card info-card service-card">
+          <span class="kicker">01</span>
+          <h3>Industrial automation</h3>
+          <p>PLC programming, HMI work, controls design, integration, commissioning, and support after startup.</p>
+        </article>
+
+        <article class="card info-card service-card">
+          <span class="kicker">02</span>
+          <h3>Electrical testing</h3>
+          <p>Acceptance testing, relay testing, commissioning, troubleshooting, and power quality work.</p>
+        </article>
+
+        <article class="card info-card service-card">
+          <span class="kicker">03</span>
+          <h3>Arc flash and power studies</h3>
+          <p>Arc flash, short circuit, and coordination studies with practical outputs that people can use.</p>
+        </article>
+
+        <article class="card info-card service-card">
+          <span class="kicker">04</span>
+          <h3>Water and government work</h3>
+          <p>Engineering support for public infrastructure and federal projects where documentation and compliance matter.</p>
+        </article>
+      </div>
+
+      <div class="button-row">
+        <a href="/services" class="btn btn--ghost">Full service list</a>
+      </div>
     </div>
   </section>
 
+  <section class="section">
+    <div class="container info-grid info-grid--3">
+      <article class="card info-card">
+        <span class="eyebrow">Process first</span>
+        <p>We do not start with a canned package. We start with what the site needs to do.</p>
+      </article>
+
+      <article class="card info-card">
+        <span class="eyebrow">Field aware</span>
+        <p>Design choices have to survive startup, maintenance, and real operators on a real schedule.</p>
+      </article>
+
+      <article class="card info-card">
+        <span class="eyebrow">Plain language</span>
+        <p>You should know what is being done, what it costs, and what you are getting back.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-box surface">
+      <div>
+        <span class="eyebrow">Need help on a project?</span>
+        <h2>Send the scope. If you have drawings, send those too.</h2>
+      </div>
+
+      <div class="cta-actions">
+        <p>Email is the fastest path. We can sort out whether you need controls work, testing, a study, or some mix of all three.</p>
+        <div class="button-row">
+          <a href="/contact" class="btn">Contact Farlink</a>
+          <a href="mailto:david@farlinksystems.com" class="btn btn--ghost">Email David</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
-  /* === HERO === */
   .hero {
-    position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    padding-top: 4rem;
-    overflow: hidden;
+    padding: 3rem 0 2.5rem;
   }
 
-  .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(232, 100, 27, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 100, 27, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 70% at 30% 50%, black 0%, transparent 100%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    margin: 1rem 0 1.5rem;
-    color: var(--white);
-  }
-
-  .hero-sub {
-    font-size: var(--text-lg);
-    max-width: 50ch;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-stripe {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent), transparent 60%);
-  }
-
-  /* === CAP STRIP === */
-  .cap-strip {
-    background: var(--dark);
-    border-bottom: 1px solid var(--border);
-    padding: 2rem 0;
-  }
-
-  .cap-items {
+  .hero-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    align-items: start;
   }
 
-  .cap-item {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
+  .hero-copy h1 {
+    max-width: 13ch;
+    margin-top: 0.8rem;
   }
 
-  .cap-num {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    color: var(--accent);
+  .hero-lead {
+    margin-top: 1.2rem;
+    max-width: 58ch;
+    font-size: var(--text-lg);
   }
 
-  .cap-label {
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--gray-200);
+  .hero-pills {
+    margin-top: 1.35rem;
+    max-width: 48rem;
   }
 
-  @media (min-width: 768px) {
-    .cap-items { grid-template-columns: repeat(4, 1fr); }
+  .hero-panel {
+    padding: 1.4rem;
+    display: grid;
+    gap: 1rem;
   }
 
-  /* === INTRO === */
+  .hero-panel-note {
+    margin-top: 0.3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-panel-note p {
+    margin-top: 0.55rem;
+  }
+
   .intro-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .intro-left h2 {
-    margin-top: 0.75rem;
-    color: var(--white);
-  }
-
-  @media (min-width: 768px) {
-    .intro-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
-  }
-
-  /* === SERVICE CARDS === */
-  .services-preview {
-    background: var(--dark);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+  .services-grid {
+    margin-top: 1.5rem;
   }
 
   .service-card {
-    padding: 2rem;
-    border: 1px solid var(--border);
-    background: var(--dark-mid);
-    transition: border-color 0.2s;
+    min-height: 100%;
   }
 
-  .service-card:hover {
-    border-color: var(--accent);
-  }
-
-  .service-icon {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .service-card h3 {
-    margin-bottom: 0.75rem;
-    color: var(--white);
-  }
-
-  .service-card p {
-    font-size: var(--text-sm);
-  }
-
-  /* === FEDERAL === */
-  .federal-section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .federal-inner {
-    max-width: 700px;
-  }
-
-  .federal-inner h2 {
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-  }
-
-  /* === CTA === */
   .cta-section {
-    background: var(--dark);
-    border-top: 1px solid var(--border);
+    padding-top: 2rem;
   }
 
-  .cta-section h2 {
-    color: var(--white);
+  .cta-box {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .cta-box h2 {
+    margin-top: 0.75rem;
+    max-width: 14ch;
+  }
+
+  .cta-actions p {
+    max-width: 48ch;
+  }
+
+  @media (min-width: 860px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
+      gap: 2rem;
+    }
+
+    .intro-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .cta-box {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      align-items: end;
+    }
   }
 </style>

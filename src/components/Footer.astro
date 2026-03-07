@@ -3,105 +3,109 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="label">Farlink Systems LLC</span>
-        <p class="footer-text">
-          Industrial automation, electrical testing, and engineering services for commercial, industrial, and federal clients.
-        </p>
-        <p class="footer-address" style="margin-top: 0.75rem;">
-          885 Gold Hill Rd<br/>Fort Mill, SC 29708
-        </p>
-      </div>
-      <div class="footer-nav">
-        <span class="label">Navigation</span>
-        <nav class="footer-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
-        </nav>
-      </div>
-      <div class="footer-contact">
-        <span class="label">Contact</span>
-        <div class="footer-links">
-          <a href="mailto:david@farlinksystems.com">david@farlinksystems.com</a>
-          <a href="#" class="phone-link" data-p1="843" data-p2="901" data-p3="7138"></a>
-          <span class="footer-address">885 Gold Hill Rd<br/>Fort Mill, SC 29708</span>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-lockup" aria-label="Farlink Systems home">
+        <img src="/logo-mark.png" alt="" class="footer-mark" />
+        <div>
+          <strong>Farlink Systems LLC</strong>
+          <p>Industrial controls, electrical testing, arc flash studies, and field support.</p>
         </div>
+      </a>
+    </div>
+
+    <div>
+      <span class="label">Pages</span>
+      <nav class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+
+    <div>
+      <span class="label">Contact</span>
+      <div class="footer-links">
+        <a href="mailto:david@farlinksystems.com">david@farlinksystems.com</a>
+        <a href="#" class="phone-link" data-p1="843" data-p2="901" data-p3="7138"></a>
+        <span>885 Gold Hill Rd<br />Fort Mill, SC 29708</span>
       </div>
     </div>
-    <hr class="rule" />
-    <div class="footer-bottom">
-      <span class="footer-copy">&copy; {year} Farlink Systems LLC. All rights reserved.</span>
-    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; {year} Farlink Systems LLC</span>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--dark);
-    border-top: 1px solid var(--border);
-    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+    padding: 2.5rem 0 1.5rem;
+    border-top: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.28);
   }
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
-    margin-bottom: 2rem;
   }
 
-  .footer-text {
+  .footer-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    max-width: 32rem;
+  }
+
+  .footer-mark {
+    width: 3rem;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .footer-lockup strong {
+    display: block;
+    color: var(--brand);
+    font-size: 1rem;
+  }
+
+  .footer-lockup p {
+    margin-top: 0.35rem;
     font-size: var(--text-sm);
-    color: var(--gray-400);
-    margin-top: 0.75rem;
-    max-width: 35ch;
   }
 
   .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-  }
-
-  .footer-links a {
-    font-size: var(--text-sm);
-    color: var(--gray-400);
-    transition: color 0.2s;
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.8rem;
+    color: var(--text-soft);
   }
 
   .footer-links a:hover {
-    color: var(--accent);
-  }
-
-  .footer-address {
-    font-size: var(--text-sm);
-    color: var(--gray-400);
-    line-height: 1.5;
+    color: var(--brand);
   }
 
   .footer-bottom {
-    padding-top: 1.5rem;
-  }
-
-  .footer-copy {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    color: var(--gray-600);
+    color: var(--text-faint);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 760px) {
     .footer-grid {
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: minmax(0, 2fr) 1fr 1fr;
+      align-items: start;
     }
   }
 </style>
 
 <script>
-  document.querySelectorAll('.phone-link').forEach(el => {
+  document.querySelectorAll('.phone-link').forEach((el) => {
     const p1 = el.dataset.p1;
     const p2 = el.dataset.p2;
     const p3 = el.dataset.p3;
