@@ -34,6 +34,16 @@ const fullTitle = `${title} | Farlink Systems`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Farlink Systems LLC",
+      url: "https://farlinksystems.com/",
+      logo: "https://farlinksystems.com/logo-lockup.png",
+      email: "info@farlinksystems.com",
+      telephone: "+1-843-380-9495",
+      address: { "@type": "PostalAddress", streetAddress: "885 Gold Hill Rd, #3094", addressLocality: "Fort Mill", addressRegion: "SC", postalCode: "29708", addressCountry: "US" }
+    })} />
     <title>{fullTitle}</title>
   </head>
   <body>

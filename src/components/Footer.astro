@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
       <span class="label">Contact</span>
       <div class="footer-links">
         <a href="mailto:info@farlinksystems.com">info@farlinksystems.com</a>
-        <a href="#" class="phone-link" data-p1="843" data-p2="380" data-p3="9495"></a>
+        <a href="tel:+18433809495" class="phone-link">843-380-9495</a>
         <span>885 Gold Hill Rd, #3094<br />Fort Mill, SC 29708</span>
       </div>
     </div>
@@ -104,13 +104,3 @@ const year = new Date().getFullYear();
   }
 </style>
 
-<script>
-  document.querySelectorAll('.phone-link').forEach((el) => {
-    const p1 = el.dataset.p1;
-    const p2 = el.dataset.p2;
-    const p3 = el.dataset.p3;
-    const num = p1 + '-' + p2 + '-' + p3;
-    el.textContent = num;
-    el.href = 'tel:+1' + p1 + p2 + p3;
-  });
-</script>
